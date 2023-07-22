@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".EventsActivity">
+
+    <TextView
+        android:id="@+id/txt_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Agenda"
+        android:fontFamily="@font/gilroy_semibol"
+        android:textSize="28sp"
+        android:textColor="@color/text_heading_color"
+        android:layout_marginStart="22dp"
+        android:layout_alignTop="@+id/img_profile_layout"
+        android:layout_alignBottom="@id/img_profile_layout"
+        android:gravity="center"/>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/img_profile_layout"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        app:cardCornerRadius="24dp"
+        android:elevation="0dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="22dp"
+        android:layout_marginTop="18dp">
+
+        <ImageView
+            android:id="@+id/img_profile"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@drawable/ic_launcher_background" />
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/img_profile_layout"
+        android:id="@+id/recycler_view_dates"
+        android:layout_marginStart="11dp"
+        android:layout_marginTop="11dp"
+        android:layout_marginBottom="5dp"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view_events"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/recycler_view_dates"
+        android:layout_marginStart="11dp"
+        android:layout_marginTop="6dp"
+        android:layout_marginBottom="11dp" />
+
+</RelativeLayout>
