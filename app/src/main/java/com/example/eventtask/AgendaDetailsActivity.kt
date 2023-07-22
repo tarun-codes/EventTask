@@ -13,7 +13,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.eventtask.adapter.AdapterAgendaSpeakers
 import com.example.eventtask.adapter.AdapterAttendeesList
-import com.example.eventtask.adapter.AdapterEvents
 import com.example.eventtask.model.AgendaResponse
 import org.jsoup.Jsoup
 
@@ -24,6 +23,7 @@ class AgendaDetailsActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_agenda_details)
+
         agenda = (intent.getSerializableExtra("agenda") as? AgendaResponse)!!
 
         val imgHeader: ImageView = findViewById(R.id.img_agenda)
@@ -104,7 +104,7 @@ class AgendaDetailsActivity : AppCompatActivity() {
                 .into(imgSponsor)
         }
 
-        imgNavBack.setOnClickListener{
+        imgNavBack.setOnClickListener {
             finish()
         }
 

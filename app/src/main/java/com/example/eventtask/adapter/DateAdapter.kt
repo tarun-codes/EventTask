@@ -32,7 +32,6 @@ class DateAdapter(
                 if (position != RecyclerView.NO_POSITION) {
                     setSelectedItem(position)
                     onDateClickListener.onDateClick(dates[position])
-                    Log.d("item_clicked", dates[position].toString())
                 }
             }
         }

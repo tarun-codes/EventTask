@@ -21,8 +21,7 @@
         <ImageView
             android:id="@+id/img_attendees"
             android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:src="@drawable/ic_launcher_background" />
+            android:layout_height="40dp" />
 
     </androidx.cardview.widget.CardView>
 

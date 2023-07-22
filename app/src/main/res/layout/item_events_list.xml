@@ -2,11 +2,11 @@
 <com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/card_layout"
+    style="@style/CustomCardViewStyle"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginTop="11dp"
     android:layout_marginStart="11dp"
-    style="@style/CustomCardViewStyle"
+    android:layout_marginTop="11dp"
     android:elevation="4dp">
 
     <RelativeLayout
@@ -17,23 +17,21 @@
             android:id="@+id/txt_event_name"
             android:layout_width="230dp"
             android:layout_height="wrap_content"
-            android:text="US Surgeon General says social media may be hazardous to teen health"
-            android:textSize="20sp"
             android:layout_marginStart="28dp"
             android:layout_marginTop="20dp"
             android:fontFamily="@font/gilroy_semibol"
-            android:textColor="@color/text_heading_color"/>
+            android:textColor="@color/text_heading_color"
+            android:textSize="20sp" />
 
         <TextView
             android:id="@+id/txt_event_time"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="15sp"
-            android:text="01:15 pm - 2:20 pm EST"
             android:layout_below="@id/txt_event_name"
-            android:fontFamily="@font/gilroy_regular"
+            android:layout_marginStart="28dp"
             android:layout_marginTop="11dp"
-            android:layout_marginStart="28dp"/>
+            android:fontFamily="@font/gilroy_regular"
+            android:textSize="15sp" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recycler_view_attendees"
@@ -47,10 +45,6 @@
 
 
     </RelativeLayout>
-
-
-
-
 
 
 </com.google.android.material.card.MaterialCardView>

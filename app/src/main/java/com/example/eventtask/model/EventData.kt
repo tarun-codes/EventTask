@@ -1,12 +1,11 @@
 package com.example.eventtask.model
 
 
-import com.example.eventtask.model.Attendees
 import com.google.gson.annotations.SerializedName
 import java.io.Serializable
 
 
-data class Data(
+data class EventData(
 
     @SerializedName("id") var id: Int? = null,
     @SerializedName("name") var name: String? = null,

@@ -10,7 +10,10 @@ import com.bumptech.glide.Glide
 import com.example.eventtask.R
 import com.example.eventtask.model.Attendees
 
-class AdapterAttendeesList(private val attendees: List<Attendees>, private val maxVisibleCount: Int) :
+class AdapterAttendeesList(
+    private val attendees: List<Attendees>,
+    private val maxVisibleCount: Int
+) :
     RecyclerView.Adapter<AdapterAttendeesList.AttendeesViewHolder>() {
 
     class AttendeesViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -19,7 +22,8 @@ class AdapterAttendeesList(private val attendees: List<Attendees>, private val m
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AttendeesViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_attendees_list, parent, false)
+        val view =
+            LayoutInflater.from(parent.context).inflate(R.layout.item_attendees_list, parent, false)
         return AttendeesViewHolder(view)
     }
 

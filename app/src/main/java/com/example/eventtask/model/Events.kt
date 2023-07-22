@@ -1,6 +1,5 @@
 package com.example.eventtask.model
 
-import com.example.eventtask.model.Data
 import com.google.gson.annotations.SerializedName
 import java.io.Serializable
 
@@ -12,7 +11,7 @@ data class Events(
     @SerializedName("replyMsg")
     var replyMsg: String? = null,
     @SerializedName("data")
-    var data: ArrayList<Data> = arrayListOf(),
+    var data: ArrayList<EventData> = arrayListOf(),
     @SerializedName("cmd")
     var cmd: String? = null,
     @SerializedName("imgPath")

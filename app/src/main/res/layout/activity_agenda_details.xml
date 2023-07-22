@@ -9,25 +9,23 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-        
+
         <ImageView
             android:id="@+id/img_nav_back"
             android:layout_width="32dp"
             android:layout_height="32dp"
-            android:src="@drawable/ic_navigate_back"
             android:layout_marginStart="20dp"
             android:layout_marginTop="20dp"
-            android:translationZ="90dp"
-            />
+            android:src="@drawable/ic_navigate_back"
+            android:translationZ="90dp" />
 
 
         <ImageView
             android:id="@+id/img_agenda"
             android:layout_width="match_parent"
             android:layout_height="300dp"
-            android:scaleType="centerCrop"
             android:padding="0dp"
-            android:src="@drawable/ic_launcher_background" />
+            android:scaleType="centerCrop" />
 
         <TextView
             android:id="@+id/txt_agenda_name"
@@ -38,7 +36,6 @@
             android:layout_marginTop="14dp"
             android:layout_marginEnd="30dp"
             android:fontFamily="@font/poppins_semi_bold"
-            android:text="US Surgeon General says social media may be hazardous to teen health"
             android:textColor="#203B54"
             android:textSize="20sp" />
 
@@ -71,7 +68,6 @@
             android:layout_marginEnd="10dp"
             android:layout_toEndOf="@+id/img_schedule"
             android:fontFamily="@font/poppins_semi_bold"
-            android:text="January 10, 2018"
             android:textColor="#203B54"
             android:textSize="17sp" />
 
@@ -79,11 +75,10 @@
             android:id="@+id/txt_agenda_time"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="15sp"
-            android:text="01:15 pm - 2:20 pm EST"
             android:layout_below="@id/txt_agenda_date"
+            android:layout_alignStart="@id/txt_agenda_date"
             android:fontFamily="@font/poppins_regular"
-            android:layout_alignStart="@id/txt_agenda_date"/>
+            android:textSize="15sp" />
 
         <ImageView
             android:id="@+id/img_location"
@@ -104,7 +99,6 @@
             android:layout_marginEnd="10dp"
             android:layout_toEndOf="@+id/img_schedule"
             android:fontFamily="@font/poppins_semi_bold"
-            android:text="The Mangolia Ballroom"
             android:textColor="#203B54"
             android:textSize="17sp" />
 
@@ -112,42 +106,41 @@
             android:id="@+id/txt_agenda_location_details"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="15sp"
-            android:text="1823 Medart Drive Tallahesse"
             android:layout_below="@id/txt_agenda_location"
+            android:layout_alignStart="@id/txt_agenda_date"
             android:fontFamily="@font/poppins_regular"
-            android:layout_alignStart="@id/txt_agenda_date"/>
+            android:text="1823 Medart Drive Tallahesse"
+            android:textSize="15sp" />
 
         <LinearLayout
             android:id="@+id/layout_buttons"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center"
-            android:layout_marginStart="30dp"
-            android:layout_marginEnd="30dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginBottom="20dp"
             android:layout_below="@+id/txt_agenda_location_details"
-           >
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginBottom="20dp"
+            android:gravity="center"
+            android:orientation="horizontal">
 
             <com.google.android.material.button.MaterialButton
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:backgroundTint="@color/blue"
-                app:cornerRadius="6dp"
+                android:layout_marginEnd="10dp"
                 android:layout_weight="1"
+                android:backgroundTint="@color/blue"
                 android:text="Enter code"
-                android:layout_marginEnd="10dp"/>
+                app:cornerRadius="6dp" />
 
             <com.google.android.material.button.MaterialButton
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:backgroundTint="@color/blue"
-                app:cornerRadius="6dp"
-                android:layout_weight="1"
                 android:layout_marginStart="10dp"
-                android:text="Take survey"/>
+                android:layout_weight="1"
+                android:backgroundTint="@color/blue"
+                android:text="Take survey"
+                app:cornerRadius="6dp" />
 
 
         </LinearLayout>
@@ -165,10 +158,10 @@
             android:textSize="17sp" />
 
         <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_view_speakers"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/txt_agenda_speakers"
-            android:id="@+id/recycler_view_speakers"
             android:layout_marginStart="15dp"
             android:layout_marginTop="10dp"
             android:layout_marginEnd="15dp"
@@ -190,14 +183,14 @@
             android:id="@+id/btn_registration_links"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:backgroundTint="@color/blue"
-            app:cornerRadius="6dp"
+            android:layout_below="@id/txt_registration_header"
             android:layout_marginStart="50dp"
             android:layout_marginTop="10dp"
+            android:layout_marginEnd="50dp"
             android:layout_marginBottom="10dp"
-            android:layout_below="@id/txt_registration_header"
+            android:backgroundTint="@color/blue"
             android:text="Craxino Technologies"
-            android:layout_marginEnd="50dp"/>
+            app:cornerRadius="6dp" />
 
         <TextView
             android:id="@+id/txt_doc_header"
@@ -215,14 +208,14 @@
             android:id="@+id/btn_document_links"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:backgroundTint="@color/blue"
-            app:cornerRadius="6dp"
+            android:layout_below="@id/txt_doc_header"
             android:layout_marginStart="50dp"
             android:layout_marginTop="10dp"
+            android:layout_marginEnd="50dp"
             android:layout_marginBottom="10dp"
-            android:layout_below="@id/txt_doc_header"
+            android:backgroundTint="@color/blue"
             android:text="Feature List (Doc)"
-            android:layout_marginEnd="50dp"/>
+            app:cornerRadius="6dp" />
 
         <TextView
             android:id="@+id/txt_desc_header"
@@ -230,11 +223,11 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/btn_document_links"
             android:layout_marginStart="30dp"
+            android:layout_marginTop="10dp"
             android:layout_marginEnd="30dp"
             android:fontFamily="@font/poppins_semi_bold"
             android:text="Description"
             android:textColor="#203B54"
-            android:layout_marginTop="10dp"
             android:textSize="17sp" />
 
         <TextView
@@ -243,11 +236,10 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/txt_desc_header"
             android:layout_marginStart="30dp"
+            android:layout_marginTop="8dp"
             android:layout_marginEnd="30dp"
             android:fontFamily="@font/poppins_regular"
-            android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad mini"
             android:textColor="#203B54"
-            android:layout_marginTop="8dp"
             android:textSize="15sp" />
 
         <TextView
@@ -256,46 +248,37 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/txt_description"
             android:layout_marginStart="30dp"
+            android:layout_marginTop="10dp"
             android:layout_marginEnd="30dp"
             android:fontFamily="@font/poppins_semi_bold"
             android:text="Sponsor name"
             android:textColor="#203B54"
-            android:layout_marginTop="10dp"
             android:textSize="17sp" />
-        
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center_horizontal"
+            android:layout_below="@id/txt_sponsor_header"
             android:layout_marginTop="10dp"
             android:layout_marginBottom="20dp"
-            android:layout_below="@id/txt_sponsor_header">
-            
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
+
             <ImageView
-                android:layout_width="60dp"
-                android:layout_height="60dp"
                 android:id="@+id/img_sponsor"
-                android:src="@drawable/ic_launcher_background"/>
-            
+                android:layout_width="60dp"
+                android:layout_height="60dp" />
+
             <TextView
                 android:id="@+id/txt_sponsor_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="30sp"
-                android:text="Apple"
-                android:fontFamily="@font/poppins_bold"
                 android:layout_gravity="center_vertical"
-                android:layout_marginStart="10dp"/>
-            
+                android:layout_marginStart="10dp"
+                android:fontFamily="@font/poppins_bold"
+                android:textSize="30sp" />
+
         </LinearLayout>
-
-
-
-
-
-
-
 
 
     </RelativeLayout>

@@ -3,37 +3,39 @@ package com.example.eventtask.adapter
 import android.annotation.SuppressLint
 import android.content.Context
 import android.os.Build
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.annotation.RequiresApi
-import androidx.cardview.widget.CardView
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.eventtask.R
-import com.example.eventtask.R.color.white
-import com.example.eventtask.model.Data
+import com.example.eventtask.model.EventData
 import com.example.eventtask.Utils
 import com.google.android.material.card.MaterialCardView
 
-class AdapterEvents(private val dataList: List<Data>, val ctx: Context, val clickListener: EventItemClickListener) : RecyclerView.Adapter<AdapterEvents.ViewHolder>() {
+class AdapterEvents(
+    private val eventDataList: List<EventData>,
+    val ctx: Context,
+    val clickListener: EventItemClickListener
+) : RecyclerView.Adapter<AdapterEvents.ViewHolder>() {
 
     interface EventItemClickListener {
-        fun onItemClick(data: Data)
+        fun onItemClick(eventData: EventData)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_events_list, parent, false)
+        val view =
+            LayoutInflater.from(parent.context).inflate(R.layout.item_events_list, parent, false)
         return ViewHolder(view)
     }
 
     @SuppressLint("ResourceAsColor")
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val dataItem = dataList[position]
+        val dataItem = eventDataList[position]
 
 
         holder.txtEventName.text = dataItem.name
@@ -60,27 +62,26 @@ class AdapterEvents(private val dataList: List<Data>, val ctx: Context, val clic
     }
 
     override fun getItemCount(): Int {
-        return dataList.size
+        return eventDataList.size
     }
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val txtEventName: TextView = itemView.findViewById(R.id.txt_event_name)
         val txtEventTime: TextView = itemView.findViewById(R.id.txt_event_time)
         val cardLayout: MaterialCardView = itemView.findViewById(R.id.card_layout)
-        val recyclerViewAttendees: RecyclerView = itemView.findViewById(R.id.recycler_view_attendees)
+        val recyclerViewAttendees: RecyclerView =
+            itemView.findViewById(R.id.recycler_view_attendees)
 
 
         init {
             itemView.setOnClickListener {
                 val position = adapterPosition
                 if (position != RecyclerView.NO_POSITION) {
-                    clickListener.onItemClick(dataList[position])
+                    clickListener.onItemClick(eventDataList[position])
                 }
             }
         }
     }
-
-
 
 
 }

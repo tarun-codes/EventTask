@@ -11,8 +11,8 @@
         android:layout_marginEnd="10dp"
         android:clickable="true"
         android:focusable="true"
-        android:textColor="@color/text_heading_color"
         android:fontFamily="@font/gilroy_regular"
+        android:textColor="@color/text_heading_color"
         android:textSize="16sp"
         android:textStyle="bold" />
 

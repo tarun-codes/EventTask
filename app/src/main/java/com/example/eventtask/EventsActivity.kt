@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.ImageView
-import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -14,13 +13,13 @@ import com.bumptech.glide.Glide
 import com.example.eventtask.adapter.AdapterEvents
 import com.example.eventtask.adapter.DateAdapter
 import com.example.eventtask.model.AgendaResponse
-import com.example.eventtask.model.Data
+import com.example.eventtask.model.EventData
 import com.example.eventtask.model.Events
-import java.nio.channels.AsynchronousCloseException
 import java.text.SimpleDateFormat
 import java.util.Locale
 
-class EventsActivity : AppCompatActivity(), AdapterEvents.EventItemClickListener , DateAdapter.DateClickListener{
+class EventsActivity : AppCompatActivity(), AdapterEvents.EventItemClickListener,
+    DateAdapter.DateClickListener {
 
     private val viewModel: EventsViewmodel by viewModels()
     private lateinit var events: Events
@@ -86,10 +85,9 @@ class EventsActivity : AppCompatActivity(), AdapterEvents.EventItemClickListener
 
     }
 
-    override fun onItemClick(data: Data) {
-        Log.d("item_clicked", data.id.toString())
-        viewModel.getAgendaDetails(data.id.toString())
-
+    override fun onItemClick(eventData: EventData) {
+        Log.d("item_clicked", eventData.id.toString())
+        viewModel.getAgendaDetails(eventData.id.toString())
 
 
     }
@@ -99,18 +97,18 @@ class EventsActivity : AppCompatActivity(), AdapterEvents.EventItemClickListener
         val inputSdf = SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'", Locale.getDefault())
         val outputSdf = SimpleDateFormat("EEE, MMM dd", Locale.getDefault())
 
-        val dataList = mutableListOf<Data>()
+        val eventDataList = mutableListOf<EventData>()
 
         for (event in events.data) {
             val date = inputSdf.parse(event.startDate)
             val formattedDate = outputSdf.format(date)
             if (selectedDate.equals(formattedDate))
-                dataList.add(event)
+                eventDataList.add(event)
         }
 
         Log.d("item_clicked", selectedDate.toString())
 
-        val adapter = AdapterEvents(dataList, baseContext, this)
+        val adapter = AdapterEvents(eventDataList, baseContext, this)
         recyclerView.layoutManager = LinearLayoutManager(this)
         recyclerView.adapter = adapter
 

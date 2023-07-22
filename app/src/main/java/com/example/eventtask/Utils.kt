@@ -11,7 +11,7 @@ import java.time.format.DateTimeFormatter
 class Utils {
     @RequiresApi(Build.VERSION_CODES.O)
     fun getFormattedTime(ts: String): String {
-        val formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'")
+        DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'")
         val timestamp = Instant.parse(ts)
         val zonedDateTime = ZonedDateTime.ofInstant(timestamp, ZoneId.of("UTC"))
         val time = zonedDateTime.toLocalTime()
@@ -21,7 +21,7 @@ class Utils {
 
     @RequiresApi(Build.VERSION_CODES.O)
     fun getFormattedDate(inputDate: String): String {
-        val inputFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'")
+        DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'")
         val outputFormatter = DateTimeFormatter.ofPattern("MMMM d, yyyy")
 
         val instant = Instant.parse(inputDate)

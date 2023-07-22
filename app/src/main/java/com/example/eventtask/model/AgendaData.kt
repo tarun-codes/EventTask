@@ -23,4 +23,4 @@ data class AgendaData(
     @SerializedName("agenda_documents") var agendaDocuments: ArrayList<AgendaDocuments> = arrayListOf(),
     @SerializedName("agenda_speakers") var agendaSpeakers: ArrayList<AgendaSpeakers> = arrayListOf()
 
-): Serializable
+) : Serializable
